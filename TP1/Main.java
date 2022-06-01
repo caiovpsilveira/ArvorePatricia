@@ -38,10 +38,10 @@ public class Main {
             System.out.println("Algum arquivo n abriu");
         }
 
-        if(extrai != null){
-            BlocoTexto bt;
+        if(extrai != null){ //enquanto o extrai possui palavras
+            BlocoTexto bt; //contem uma palavra e a sua posicao(linha, coluna) no texto
             try{
-                while(extrai.getEOF() == 0){
+                while(extrai.getEOF() == 0){ //ainda nao chegou no fim do arquivo
                     bt = extrai.proximaPalavra();
                     if(bt != null){ //linha so de delimitadores
                         pat.insere(bt.getPalavra(), new Posicao(bt.getLinha(), bt.getColuna()));
